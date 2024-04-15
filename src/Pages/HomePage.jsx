@@ -49,7 +49,7 @@ const HomePage = () => {
                 <p>Artist: {track.artists[0].name}</p>
                 <p>Popularity: {track.popularity}</p>
                 <p>Release Date: {track.album.release_date}</p>
-                <audio controls>
+                <audio controls className={styles.audioPlayer}>
                   <source src={track.preview_url} type="audio/mp3" />
                   Your browser does not support the audio element.
                 </audio>

@@ -32,3 +32,13 @@
   font-style: italic;
   color: #888;
 }
+.audioPlayer {
+  width: 100%; /* Set width to 100% (full width) */
+}
+
+@media (max-width: 768px) {
+  /* Adjust width for smaller screens */
+  .audioPlayer {
+    width: 80%; /* Set width to 80% for smaller screens */
+  }
+}
