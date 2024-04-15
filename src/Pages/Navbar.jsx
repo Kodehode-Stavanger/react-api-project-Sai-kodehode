@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, Outlet } from "react-router-dom";
-
+import styles from "./Navbar.module.css";
 const Navbar = () => {
   const [showLink, setShowLink] = useState(
     sessionStorage.getItem("hasClickedLink") !== "true"
@@ -20,12 +20,28 @@ const Navbar = () => {
   // First time landing on the page
   return (
     <div>
-      <NavLink to="/search">Spotify</NavLink>
+      <NavLink to="/search" className={styles.navbar}>
+        Spotify
+      </NavLink>
       <Outlet />
       {showLink && (
-        <NavLink to="/search" onClick={handleLinkClick}>
-          Click here
-        </NavLink>
+        <div className={styles.center}>
+          <NavLink
+            to="/search"
+            style={{
+              fontSize: "24px",
+              padding: "10px 20px",
+              backgroundColor: "lightblue",
+              color: "black",
+              textDecoration: "none",
+              borderRadius: "5px",
+              transition: "background-color 0.3s ease",
+            }}
+            onClick={handleLinkClick}
+          >
+            Click here
+          </NavLink>
+        </div>
       )}
     </div>
   );
