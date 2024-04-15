@@ -17,7 +17,7 @@ const Navbar = () => {
       sessionStorage.removeItem("hasClickedLink");
     };
   }, []);
-
+  // First time landing on the page
   return (
     <div>
       <NavLink to="/search">Spotify</NavLink>
