@@ -21,7 +21,7 @@ const HomePage = () => {
         setTracks(tracksData);
       } catch (error) {
         console.error("Error fetching tracks:", error);
-        setTracks([]); // Clear tracks in case of error
+        setTracks([]);
       } finally {
         setIsLoading(false);
       }

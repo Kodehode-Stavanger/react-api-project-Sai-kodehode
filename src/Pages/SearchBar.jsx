@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import Spinner from "../Components/Spinner";
 import styles from "./SearchBar.module.css";
@@ -26,7 +27,7 @@ const SearchBar = ({ onSearch }) => {
       window.location.href = url;
     } catch (error) {
       console.error("Error fetching tracks:", error);
-      onSearch([]); // Notify parent of error
+      onSearch([]);
     } finally {
       setIsLoading(false);
     }
@@ -43,14 +44,13 @@ const SearchBar = ({ onSearch }) => {
           placeholder="Search for tracks..."
           aria-label="search"
         />
-        {/* Use an <a> tag to navigate when button is clicked */}
-        <a
+        <Link
           className={styles.searchbutton}
-          href={`/search/${keyword === "" ? "trending" : keyword}`}
+          to={`/search/${keyword === "" ? "trending" : keyword}`}
           onClick={handleSearch}
         >
           Search
-        </a>
+        </Link>
       </div>
       {isLoading && <Spinner type="spokes" color="black" />}
     </div>
