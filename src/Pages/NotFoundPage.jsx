@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
+import styles from "./NotFoundPage.module.css";
 export default function NotFoundPage({ msg }) {
   return (
-    <div>
-      <h1>{msg}</h1>
-      <Link to="/">Go to Home</Link>
+    <div className={styles.notFoundContainer}>
+      <h1 className={styles.notFoundHeading}>{msg}</h1>
+      <Link className={styles.homeLink} to="/search">
+        Go to Home
+      </Link>
     </div>
   );
 }
