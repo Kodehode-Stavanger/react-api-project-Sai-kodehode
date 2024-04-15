@@ -2,27 +2,27 @@ import React, { useState, useEffect } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 
 const Navbar = () => {
-  const [isClicked, setIsClicked] = useState(
-    localStorage.getItem("linkClicked") === "true"
+  const [showLink, setShowLink] = useState(
+    sessionStorage.getItem("hasClickedLink") !== "true"
   );
 
   const handleLinkClick = () => {
-    setIsClicked(true);
-    localStorage.setItem("linkClicked", "true");
+    setShowLink(false);
+    sessionStorage.setItem("hasClickedLink", "true");
   };
 
-  // Clear the clicked state from localStorage when the component mounts
+  // Clear sessionStorage when component unmounts
   useEffect(() => {
-    if (isClicked) {
-      localStorage.setItem("linkClicked", "true");
-    }
-  }, [isClicked]);
+    return () => {
+      sessionStorage.removeItem("hasClickedLink");
+    };
+  }, []);
 
   return (
     <div>
       <NavLink to="/search">Spotify</NavLink>
       <Outlet />
-      {!isClicked && (
+      {showLink && (
         <NavLink to="/search" onClick={handleLinkClick}>
           Click here
         </NavLink>
