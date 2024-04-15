@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Spinner from "../Components/Spinner";
-import { Outlet, NavLink } from "react-router-dom";
+import styles from "./SearchBar.module.css";
 
 const SearchBar = ({ onSearch }) => {
   const [keyword, setKeyword] = useState("");
@@ -34,8 +34,9 @@ const SearchBar = ({ onSearch }) => {
 
   return (
     <div className="searchbar">
-      <div className="search-container">
+      <div className={styles.searchcontainer}>
         <input
+          className={styles.searchholder}
           value={keyword}
           onChange={(event) => setKeyword(event.target.value)}
           type="search"
@@ -44,6 +45,7 @@ const SearchBar = ({ onSearch }) => {
         />
         {/* Use an <a> tag to navigate when button is clicked */}
         <a
+          className={styles.searchbutton}
           href={`/search/${keyword === "" ? "trending" : keyword}`}
           onClick={handleSearch}
         >
