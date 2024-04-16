@@ -20,7 +20,6 @@ const router = createBrowserRouter([
         path: "search/:keyword",
         element: <HomePage />,
       },
-      // Add more child routes as needed under SearchSongs
     ],
     errorElement: <NotFoundPage msg="404! This page doesn't exist" />,
   },
