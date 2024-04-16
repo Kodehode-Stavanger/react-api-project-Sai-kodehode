@@ -20,11 +20,7 @@ const SearchBar = ({ onSearch }) => {
 
       console.log("Response:", response.data);
       const tracksData = response.data.tracks.items;
-      onSearch(tracksData); // Ensure this calls onSearch with data
-
-      // Update URL by setting window.location.href
-      const url = `/search/${encodeURIComponent(keyword.trim())}searched`;
-      window.location.href = url;
+      onSearch(tracksData);
     } catch (error) {
       console.error("Error fetching tracks:", error);
       onSearch([]);
