@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./NotFoundPage.module.css";
-
+// Not found page
 export default function NotFoundPage({ msg }) {
   return (
     <div className={styles.notFoundContainer}>

@@ -8,7 +8,7 @@ const Navbar = () => {
   );
 
   const location = useLocation();
-
+  // To hide click here
   const handleLinkClick = () => {
     setShowLink(false);
     sessionStorage.setItem("hasClickedLink", "true");
@@ -21,8 +21,8 @@ const Navbar = () => {
     };
   }, []);
 
+  // Check if the current location is exactly the root ("/")
   useEffect(() => {
-    // Check if the current location is exactly the root ("/")
     if (
       location.pathname === "/" &&
       !sessionStorage.getItem("hasClickedLink")

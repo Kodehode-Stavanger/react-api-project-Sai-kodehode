@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Spinner from "../Components/Spinner";
 import styles from "./SearchBar.module.css";
-
+// Seachbar
 const SearchBar = ({ onSearch }) => {
   const [keyword, setKeyword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
+  // Fetching data from API
   const handleSearch = async () => {
     console.log("Searching with keyword:", keyword);
     setIsLoading(true);
@@ -29,6 +29,8 @@ const SearchBar = ({ onSearch }) => {
     }
   };
 
+  // search bar layout
+
   return (
     <div className="searchbar">
       <div className={styles.searchcontainer}>
@@ -40,6 +42,7 @@ const SearchBar = ({ onSearch }) => {
           placeholder="Search for tracks..."
           aria-label="search"
         />
+        {/* when we havent entered any value in search bar, it takes Trending as default */}
         <Link
           className={styles.searchbutton}
           to={`/search/${keyword === "" ? "trending" : keyword}`}

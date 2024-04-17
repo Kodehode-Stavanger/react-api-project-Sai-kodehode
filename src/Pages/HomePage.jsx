@@ -9,7 +9,7 @@ const HomePage = () => {
   const { keyword } = useParams();
   const [tracks, setTracks] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
+  // Fetching data from API
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
@@ -31,6 +31,8 @@ const HomePage = () => {
       fetchData();
     }
   }, [keyword]);
+
+  // Returning data into page
 
   return (
     <div className={styles.homePage}>
