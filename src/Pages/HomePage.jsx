@@ -15,7 +15,7 @@ const HomePage = () => {
       setIsLoading(true);
       try {
         const response = await axios.get(
-          `https://v1.nocodeapi.com/spotify123/spotify/UDlBcfcquvpiBShn/search?q=${keyword}&type=track`
+          `https://v1.nocodeapi.com/spotify3/spotify/awxzwNehczkKgwJc/search?q=${keyword}&type=track`
         );
         const tracksData = response.data.tracks.items;
         setTracks(tracksData);

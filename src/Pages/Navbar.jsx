@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
 import styles from "./Navbar.module.css";
+
 const Navbar = () => {
   const [showLink, setShowLink] = useState(
     sessionStorage.getItem("hasClickedLink") !== "true"
   );
+
+  const location = useLocation();
 
   const handleLinkClick = () => {
     setShowLink(false);
@@ -17,7 +20,19 @@ const Navbar = () => {
       sessionStorage.removeItem("hasClickedLink");
     };
   }, []);
-  // First time landing on the page
+
+  useEffect(() => {
+    // Check if the current location is exactly the root ("/")
+    if (
+      location.pathname === "/" &&
+      !sessionStorage.getItem("hasClickedLink")
+    ) {
+      setShowLink(true);
+    } else {
+      setShowLink(false);
+    }
+  }, [location.pathname]);
+
   return (
     <div>
       <NavLink to="/search" className={styles.navbar}>

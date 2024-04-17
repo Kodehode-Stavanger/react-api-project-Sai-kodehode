@@ -34,6 +34,7 @@
 }
 .audioPlayer {
   width: 100%;
+  margin-top: 20px;
 }
 
 @media (max-width: 768px) {

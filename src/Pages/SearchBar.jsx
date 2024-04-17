@@ -13,7 +13,7 @@ const SearchBar = ({ onSearch }) => {
     setIsLoading(true);
     try {
       const response = await axios.get(
-        `https://v1.nocodeapi.com/spotify123/spotify/UDlBcfcquvpiBShn/search?q=${encodeURIComponent(
+        `https://v1.nocodeapi.com/spotify3/spotify/awxzwNehczkKgwJc/search?q=${encodeURIComponent(
           keyword.trim()
         )}&type=track`
       );
