@@ -1,0 +1,30 @@
+.searchcontainer {
+  display: flex;
+  align-items: center;
+}
+
+.searchholder {
+  flex: 1;
+  padding: 10px;
+  margin: 20px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+.searchbutton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.searchbutton:hover {
+  background-color: #0056b3;
+}

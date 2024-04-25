@@ -1,0 +1,44 @@
+.homePage {
+  padding: 20px;
+}
+
+.trackList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+
+.trackItem {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  color: rgb(38, 0, 255);
+}
+
+.trackItem img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.trackDetails {
+  padding-right: 10px;
+  line-height: 26px;
+  color: rgb(8, 132, 132);
+  margin: 1px;
+}
+
+.loading {
+  text-align: center;
+  font-style: italic;
+  color: #888;
+}
+.audioPlayer {
+  width: 100%;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .audioPlayer {
+    width: 80%;
+  }
+}
